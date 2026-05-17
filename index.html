@@ -1,100 +1,88 @@
-<!DOCTYPE HTML>
-<!--
-	Standout by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
--->
-<html>
-	<head>
-		<title>Matteo Aldeghi - Home</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matteo Aldeghi</title>
 
-		<!-- Page wrapper -->
-			<div id="page-wrapper">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-				<!-- Header -->
-					<header id="header">
-						<span class="logo"><a href="index.html">Matteo Aldeghi <span>// ML Research @ Bayer</span></a></span>
-						<a href="#menu"><span>Menu</span></a>
-					</header>
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      min-height: 100%; width: 100%;
+      background: #fafaf9;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    #root { width: 100%; min-height: 100vh; }
 
-				<!-- Nav -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="resume.html">Résumé</a></li>
-								<li><a href="publications.html">Publications</a></li>
-							</ul>
-							<a class="close"><span>Close</span></a>
-						</div>
-					</nav>
+    /* Smooth scrolling for in-page anchors */
+    html { scroll-behavior: smooth; }
 
-				<!-- Banner 
-					<section id="banner">
-						<div class="inner">
-							<h1>Matteo Aldeghi</h1>
-							<div class="content">
-								<p>Chemistry and biophysics via simulation and machine learning</p>
-								<ul class="actions special">
-									<li><a href="index.html#footer" class="button large next">About</a></li>
-								</ul>
-							</div>
-						</div> 
-					</section>  -->
+    /* Page transition: subtle fade + slight lift */
+    .page-fade {
+      animation: pageFade 360ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    @keyframes pageFade {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-				<!-- Footer  -->
-					<section id="footer" class="wrapper style2"> 
-						<div class="inner">
-							<div class="split">
-								<div class="content">
-									<header>
-										<h2>About</h2>
-									</header>
-									<p><span class="image right" style="width: 30%"><img src="images/about.png" alt="" /></span>
-									I lead R&D Machine Learning Research at <a href="https://www.bayer.com/en/pharma/pharmaceuticals">Bayer Pharma</a>, where I'm responsible for the development and application of ML/AI solutions supporting our efforts across the R\&D value chain.
-									<br><br>
-									Previously, I worked as a Senior Research Scientist at <a href="https://research.google">Google Research</a>, a Research Scientist at <a href="https://www.mit.edu">MIT</a>, a Vector Postdoctoral Fellow at the <a href="https://vectorinstitute.ai">Vector Institute for AI</a>, and a Humboldt Research Fellow at the <a href="http://www.mpibpc.mpg.de/en">Max Planck Institute for Biophysical Chemistry</a>. I obtained my PhD in computational biochemistry at the <a href="http://www.ox.ac.uk">University of Oxford</a>.
-									<br><br>
-									I'm interested in how ML and AI can accelerate the rate of scientific discovery and improve research productivity.
-									</p>
-									<ul class="actions">
-										<li><a href="resume.html" class="button next">Résumé</a></li>
-												<li><a href="publications.html" class="button next">Publications</a></li>
-									</ul>
-								</div>
-								<ul class="contact-icons">
-									<li><a href="https://www.linkedin.com/in/matteoaldeghi/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://scholar.google.com/citations?user=dtoCihgAAAAJ&hl=en" target="_blank" class="icon solid fa-graduation-cap"><span class="label">Google Scholar</span></a></li>
-									<li><a href="https://github.com/matteoaldeghi" target="_blank" class="icon brands alt fa-github-alt"><span class="label">GitHub</span></a></li>
-									<!-- <li><a href="https://twitter.com/matteo_aldeghi" target="_blank" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li> -->
-									<li><a href="mailto:aldeghi.ma@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+    /* Stagger child reveals inside a freshly mounted page */
+    .page-fade > * > section,
+    .page-fade > * > header {
+      animation: sectionReveal 500ms cubic-bezier(0.22, 0.61, 0.36, 1) backwards;
+    }
+    .page-fade > * > header { animation-delay: 40ms; }
+    .page-fade > * > section:nth-child(2) { animation-delay: 120ms; }
+    .page-fade > * > section:nth-child(3) { animation-delay: 180ms; }
+    .page-fade > * > section:nth-child(4) { animation-delay: 240ms; }
+    .page-fade > * > section:nth-child(5) { animation-delay: 300ms; }
+    @keyframes sectionReveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-				<!-- Copyright
-					<section class="wrapper style2 copyright">
-						<div><p><img src="images/MIT-logo-black-red-72x38.svg" style="width: 10%" alt=""/></p></div>
-						<div class="inner">&copy; 2023 Matteo Aldeghi</div>
-					</section> -->
+    /* Author highlight */
+    .dir-c-me {
+      color: var(--c-accent, #2548f0);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--c-accent, #2548f0);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
 
-			</div>
+    /* Subtle scrollbars */
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 5px; border: 2px solid #fafaf9; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.25); }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    a { color: inherit; }
 
-	</body>
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .page-fade,
+      .page-fade > * > section,
+      .page-fade > * > header { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="data.jsx"></script>
+  <script type="text/babel" src="direction-c.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
 </html>
