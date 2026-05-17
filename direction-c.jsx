@@ -216,7 +216,7 @@ function DirC_Home({ tweaks }) {
               <MLHighlight style={tweaks.mlStyle || "serif"} />
             </h1>
 
-            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: 0, maxWidth: 600 }}>I lead R&D Machine Learning Research at Bayer Pharmaceuticals, where I'm responsible for the development and application of ML/AI solutions supporting our efforts across the R&D value chain.</p>
+            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: 0, maxWidth: 600 }}>I lead R&D Machine Learning Research at Bayer Pharmaceuticals, where I'm responsible for the development and application of AI solutions supporting our efforts across the R&D value chain.</p>
             <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: "16px 0 0", maxWidth: 600 }}>I'm interested in how technology, especially artificial intelligence, can accelerate the rate of scientific discovery and improve human health.</p>
           </div>
 
