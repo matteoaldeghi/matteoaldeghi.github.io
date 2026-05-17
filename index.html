@@ -72,6 +72,104 @@
       .page-fade > * > header { animation: none; }
       html { scroll-behavior: auto; }
     }
+
+    /* ── Mobile (≤768px) ───────────────────────────────────────── */
+    @media (max-width: 768px) {
+      /* Tighter horizontal padding throughout */
+      .c-page > section,
+      .c-page > footer,
+      .c-page > header,
+      .c-section,
+      .c-footer { padding-left: 20px !important; padding-right: 20px !important; }
+      .c-section-hero { padding-top: 40px !important; padding-bottom: 32px !important; }
+      .c-section-featured { padding-top: 56px !important; padding-bottom: 24px !important; }
+      .c-section-affil { padding-top: 24px !important; padding-bottom: 24px !important; }
+
+      /* Nav: shrink, tighter pills */
+      .c-nav { padding: 14px 20px !important; gap: 12px !important; flex-wrap: wrap !important; }
+      .c-nav > a span { font-size: 15px !important; }
+      .c-nav nav { gap: 2px !important; }
+      .c-nav nav a { padding: 6px 10px !important; font-size: 13px !important; }
+
+      /* Big titles smaller */
+      .c-h1 { font-size: 40px !important; line-height: 1.05 !important; margin-bottom: 20px !important; }
+      .c-h1 > span > span[style*="0.82em"] { font-size: 0.78em !important; }
+
+      /* Hero grid → single column, info card on top */
+      .c-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        align-items: stretch !important;
+      }
+      .c-hero-grid > div:first-child p { font-size: 16px !important; }
+
+      /* Info card: shrink */
+      .c-info-card { padding: 18px !important; }
+      .c-info-card-head img { width: 56px !important; height: 56px !important; border-radius: 14px !important; }
+
+      /* Affiliations strip: wrap with smaller items */
+      .c-affil-row {
+        flex-wrap: wrap !important;
+        gap: 10px 20px !important;
+        justify-content: flex-start !important;
+      }
+      .c-affil-row > span { font-size: 14px !important; }
+
+      /* Featured publications: stack header, single-column grid */
+      .c-feat-head {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+        margin-bottom: 24px !important;
+      }
+      .c-feat-head h2 { font-size: 26px !important; }
+      .c-feat-grid { grid-template-columns: 1fr !important; }
+
+      /* Footer: stack columns, stack bottom row */
+      .c-footer-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .c-footer-bottom { flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
+
+      /* Résumé experience card → stack */
+      .c-resume-card {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        align-items: start !important;
+        padding: 18px !important;
+      }
+      .c-resume-card > div:last-child { text-align: left !important; }
+
+      /* Résumé education: single column */
+      .c-edu-grid { grid-template-columns: 1fr !important; }
+
+      /* Publications controls: stack search & filters */
+      .c-pub-controls {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+      }
+      .c-pub-filters {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        max-width: 100% !important;
+      }
+      .c-pub-filters button { flex-shrink: 0 !important; white-space: nowrap; }
+
+      /* Publications row → stack */
+      .c-pub-row {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        padding: 16px !important;
+      }
+      .c-pub-row > div:last-child { text-align: left !important; }
+      .c-pub-row > div:first-child { display: flex; align-items: baseline; gap: 12px; }
+    }
+
+    /* ── Very small (≤480px) ───────────────────────────────────── */
+    @media (max-width: 480px) {
+      .c-h1 { font-size: 34px !important; }
+      .c-nav { padding: 12px 16px !important; }
+      .c-page > section, .c-section, .c-footer { padding-left: 16px !important; padding-right: 16px !important; }
+    }
   </style>
 </head>
 <body>

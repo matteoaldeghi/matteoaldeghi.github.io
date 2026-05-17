@@ -21,7 +21,7 @@ const cStyles = {
 
 function DirC_Page({ children, label }) {
   return (
-    <div data-screen-label={label} style={{
+    <div className="c-page" data-screen-label={label} style={{
       width: "100%",
       minHeight: "100%",
       background: C_THEME.bg,
@@ -39,7 +39,7 @@ function DirC_Page({ children, label }) {
 function DirC_Nav({ active }) {
   const items = [["Home", "home"], ["Résumé", "resume"], ["Publications", "publications"]];
   return (
-    <header style={{
+    <header className="c-nav" style={{
       display: "flex", alignItems: "center", justifyContent: "space-between",
       padding: "20px 40px",
       position: "sticky", top: 0, zIndex: 10,
@@ -197,10 +197,10 @@ function DirC_Home({ tweaks }) {
       <DirC_Nav active="home" />
 
       {/* Hero */}
-      <section style={{ padding: "64px 40px 64px", maxWidth: 1200, margin: "0 auto", position: "relative" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "end" }}>
+      <section className="c-section c-section-hero" style={{ padding: "64px 40px 64px", maxWidth: 1200, margin: "0 auto", position: "relative" }}>
+        <div className="c-hero-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "end" }}>
           <div>
-            <h1 style={{
+            <h1 className="c-h1" style={{
               fontFamily: cStyles.display, fontWeight: 500,
               fontSize: 72, lineHeight: 1.04, letterSpacing: "-0.04em",
               margin: "0 0 32px"
@@ -217,14 +217,14 @@ function DirC_Home({ tweaks }) {
             </h1>
 
             <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: 0, maxWidth: 600 }}>I lead R&D Machine Learning Research at Bayer Pharmaceuticals, where I'm responsible for the development and application of ML/AI solutions supporting our efforts across the R&D value chain.</p>
-            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: "16px 0 0", maxWidth: 600 }}>I'm interested in the potential that technology, especially artificial intelligence, has to enhance research productivity and accelerate the rate of scientific and medical advances.</p>
+            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: "16px 0 0", maxWidth: 600 }}>I'm interested in how technology, especially artificial intelligence, can accelerate the rate of scientific discovery and improve human health.</p>
           </div>
 
-          <div style={{
+          <div className="c-info-card" style={{
             background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
             borderRadius: 14, padding: 24
           }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
+            <div className="c-info-card-head" style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
               <img src="images/about.png" alt="" style={{ width: 84, height: 84, borderRadius: 18, objectFit: "cover" }} />
               <div>
                 <div style={{ fontFamily: cStyles.display, fontWeight: 600, fontSize: 15 }}>Sr. Director, ML Research</div>
@@ -242,8 +242,8 @@ function DirC_Home({ tweaks }) {
       </section>
 
       {/* Affiliations strip */}
-      <section style={{ padding: "32px 40px", borderTop: `1px solid ${C_THEME.rule}`, borderBottom: `1px solid ${C_THEME.rule}`, background: C_THEME.surface }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32 }}>
+      <section className="c-section c-section-affil" style={{ padding: "32px 40px", borderTop: `1px solid ${C_THEME.rule}`, borderBottom: `1px solid ${C_THEME.rule}`, background: C_THEME.surface }}>
+        <div className="c-affil-row" style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32 }}>
           <span style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted, letterSpacing: "0.1em" }}>PREVIOUSLY</span>
           {["Google Research", "MIT", "Vector Institute", "Max Planck", "Oxford"].map((a) =>
           <span key={a} style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 18, color: C_THEME.inkSoft, letterSpacing: "-0.015em" }}>{a}</span>
@@ -282,8 +282,8 @@ function FeaturedPublications() {
   };
 
   return (
-    <section style={{ padding: "80px 40px 32px", maxWidth: 1200, margin: "0 auto" }}>
-      <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32, gap: 24, flexWrap: "wrap" }}>
+    <section className="c-section c-section-featured" style={{ padding: "80px 40px 32px", maxWidth: 1200, margin: "0 auto" }}>
+      <div className="c-feat-head" style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32, gap: 24, flexWrap: "wrap" }}>
         <div>
           <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.accent, letterSpacing: "0.1em", marginBottom: 12, fontWeight: 600 }}>
             FEATURED · 3 OF {window.PUBLICATIONS.length}
@@ -301,7 +301,7 @@ function FeaturedPublications() {
             padding: "9px 14px", borderRadius: 8,
             cursor: refreshing ? "default" : "pointer",
             opacity: refreshing ? 0.6 : 1,
-            transition: "opacity .15s",
+            transition: "opacity .15s"
           }}>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ transition: "transform .4s", transform: refreshing ? "rotate(360deg)" : "rotate(0)" }}>
               <path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9" />
@@ -313,27 +313,27 @@ function FeaturedPublications() {
             fontFamily: cStyles.body, fontSize: 13, fontWeight: 500,
             color: C_THEME.bg, background: C_THEME.ink,
             padding: "9px 14px", borderRadius: 8,
-            textDecoration: "none",
+            textDecoration: "none"
           }}>View all →</a>
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
-        {picks.map((p) => (
-          <a key={p.title} href={p.url} target="_blank" rel="noreferrer" style={{
-            display: "flex", flexDirection: "column",
-            background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
-            borderRadius: 14, padding: 24,
-            textDecoration: "none", color: C_THEME.ink,
-            transition: "border-color .15s, transform .15s",
-          }}>
+      <div className="c-feat-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+        {picks.map((p) =>
+        <a key={p.title} href={p.url} target="_blank" rel="noreferrer" style={{
+          display: "flex", flexDirection: "column",
+          background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
+          borderRadius: 14, padding: 24,
+          textDecoration: "none", color: C_THEME.ink,
+          transition: "border-color .15s, transform .15s"
+        }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
               <span style={{ fontFamily: cStyles.mono, fontSize: 22, fontWeight: 500, letterSpacing: "-0.02em" }}>'{String(p.year).slice(2)}</span>
               <span style={{
-                fontFamily: cStyles.mono, fontSize: 11, fontWeight: 500,
-                padding: "4px 8px", borderRadius: 6,
-                background: C_THEME.surfaceAlt, color: C_THEME.inkSoft,
-              }}>{p.affiliation}</span>
+              fontFamily: cStyles.mono, fontSize: 11, fontWeight: 500,
+              padding: "4px 8px", borderRadius: 6,
+              background: C_THEME.surfaceAlt, color: C_THEME.inkSoft
+            }}>{p.affiliation}</span>
             </div>
             <div style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 18, lineHeight: 1.3, letterSpacing: "-0.015em", marginBottom: 12, flex: 1 }}>
               {p.title}
@@ -342,16 +342,16 @@ function FeaturedPublications() {
               <em style={{ fontStyle: "italic" }}>{p.venue}</em>
             </div>
           </a>
-        ))}
+        )}
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 function DirC_Footer() {
   return (
-    <footer style={{ padding: "48px 40px", borderTop: `1px solid ${C_THEME.rule}`, maxWidth: 1200, margin: "0 auto" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 40 }}>
+    <footer className="c-footer" style={{ padding: "48px 40px", borderTop: `1px solid ${C_THEME.rule}`, maxWidth: 1200, margin: "0 auto" }}>
+      <div className="c-footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40 }}>
         <div>
           <div style={{ fontFamily: cStyles.display, fontWeight: 600, fontSize: 20, letterSpacing: "-0.015em", marginBottom: 8 }}>Matteo Aldeghi</div>
           <p style={{ fontSize: 14, color: C_THEME.inkSoft, maxWidth: 320, margin: 0 }}>Machine learning research, drug discovery and development.</p>
@@ -371,14 +371,8 @@ function DirC_Footer() {
             <li><a href={window.PROFILE.links.github} style={{ color: "inherit", textDecoration: "none" }}>GitHub</a></li>
           </ul>
         </div>
-        <div>
-          <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted, marginBottom: 12, letterSpacing: "0.1em" }}>CONTACT</div>
-          <a href={`mailto:${window.PROFILE.email}`} style={{ fontSize: 13, color: C_THEME.ink, textDecoration: "none", fontWeight: 500 }}>
-            {window.PROFILE.email}
-          </a>
-        </div>
       </div>
-      <div style={{ marginTop: 40, paddingTop: 24, borderTop: `1px solid ${C_THEME.rule}`, fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted, display: "flex", justifyContent: "space-between", letterSpacing: "0.04em" }}>
+      <div className="c-footer-bottom" style={{ marginTop: 40, paddingTop: 24, borderTop: `1px solid ${C_THEME.rule}`, fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted, display: "flex", justifyContent: "space-between", letterSpacing: "0.04em" }}>
         <span>© 2026 MATTEO ALDEGHI</span>
         <span>BUILT IN CAMBRIDGE</span>
       </div>
@@ -391,11 +385,11 @@ function DirC_Resume({ tweaks }) {
     <DirC_Page label="C · Résumé">
       <DirC_Nav active="resume" />
 
-      <section style={{ padding: "80px 40px 48px", maxWidth: 1200, margin: "0 auto" }}>
+      <section className="c-section" style={{ padding: "80px 40px 48px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.accent, letterSpacing: "0.1em", marginBottom: 16, fontWeight: 600 }}>
           RÉSUMÉ / 2007 — PRESENT
         </div>
-        <h1 style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 84, letterSpacing: "-0.04em", lineHeight: 0.98, margin: "0 0 24px" }}>
+        <h1 className="c-h1" style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 84, letterSpacing: "-0.04em", lineHeight: 0.98, margin: "0 0 24px" }}>
           Career log.
         </h1>
         <p style={{ fontSize: 19, color: C_THEME.inkSoft, maxWidth: 720, lineHeight: 1.5 }}>Trained as a chemist, sharpened as a computational biophysicist, now a machine learning researcher.
@@ -403,13 +397,13 @@ function DirC_Resume({ tweaks }) {
         </p>
       </section>
 
-      <section style={{ padding: "0 40px 48px", maxWidth: 1200, margin: "0 auto" }}>
+      <section className="c-section" style={{ padding: "0 40px 48px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted, letterSpacing: "0.1em", marginBottom: 16, fontWeight: 600 }}>
           EXPERIENCE
         </div>
         <div style={{ display: "grid", gap: 12 }}>
           {window.RESUME.filter((r) => r.kind !== "education").map((r, i) =>
-          <article key={r.org} style={{
+          <article key={r.org} className="c-resume-card" style={{
             background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
             borderRadius: 14, padding: 24,
             display: "grid", gridTemplateColumns: "120px 1fr 200px", gap: 24,
@@ -452,11 +446,11 @@ function DirC_Resume({ tweaks }) {
         </div>
       </section>
 
-      <section style={{ padding: "0 40px 80px", maxWidth: 1200, margin: "0 auto" }}>
+      <section className="c-section" style={{ padding: "0 40px 80px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted, letterSpacing: "0.1em", marginBottom: 16, fontWeight: 600 }}>
           EDUCATION
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+        <div className="c-edu-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
           {window.RESUME.filter((r) => r.kind === "education").map((r) =>
           <article key={r.org} style={{
             background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
@@ -501,11 +495,11 @@ function DirC_Publications({ tweaks }) {
     <DirC_Page label="C · Publications">
       <DirC_Nav active="publications" />
 
-      <section style={{ padding: "64px 40px 32px", maxWidth: 1200, margin: "0 auto" }}>
+      <section className="c-section" style={{ padding: "64px 40px 32px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.accent, letterSpacing: "0.1em", marginBottom: 16, fontWeight: 600 }}>
           PUBLICATIONS / {window.PUBLICATIONS.length} PAPERS
         </div>
-        <h1 style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 76, letterSpacing: "-0.04em", lineHeight: 1, margin: "0 0 24px" }}>
+        <h1 className="c-h1" style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 76, letterSpacing: "-0.04em", lineHeight: 1, margin: "0 0 24px" }}>
           The complete bibliography.
         </h1>
         <p style={{ fontSize: 18, color: C_THEME.inkSoft, maxWidth: 720, lineHeight: 1.55 }}>
@@ -514,9 +508,9 @@ function DirC_Publications({ tweaks }) {
       </section>
 
       {/* Controls */}
-      <section style={{ padding: "16px 40px", maxWidth: 1200, margin: "0 auto", position: "sticky", top: 68, zIndex: 5, background: "rgba(250,250,249,0.9)", backdropFilter: "blur(10px)" }}>
-        <div style={{ display: "flex", gap: 12, alignItems: "center", padding: "12px 0", borderBottom: `1px solid ${C_THEME.rule}` }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`, borderRadius: 10, padding: "8px 14px" }}>
+      <section className="c-section c-section-controls" style={{ padding: "16px 40px", maxWidth: 1200, margin: "0 auto", position: "sticky", top: 68, zIndex: 5, background: "rgba(250,250,249,0.9)", backdropFilter: "blur(10px)" }}>
+        <div className="c-pub-controls" style={{ display: "flex", gap: 12, alignItems: "center", padding: "12px 0", borderBottom: `1px solid ${C_THEME.rule}` }}>
+          <div className="c-pub-search" style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`, borderRadius: 10, padding: "8px 14px" }}>
             <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke={C_THEME.inkMuted} strokeWidth="2">
               <circle cx="9" cy="9" r="6" /><path d="m17 17-3.5-3.5" />
             </svg>
@@ -528,7 +522,7 @@ function DirC_Publications({ tweaks }) {
             
             <span style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted }}>{pubs.length} results</span>
           </div>
-          <div style={{ display: "flex", gap: 4, background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`, borderRadius: 10, padding: 4 }}>
+          <div className="c-pub-filters" style={{ display: "flex", gap: 4, background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`, borderRadius: 10, padding: 4 }}>
             {affiliations.map((a) =>
             <button key={a} onClick={() => setFilter(a)} style={{
               fontFamily: cStyles.body, fontSize: 12, fontWeight: 500,
@@ -542,10 +536,10 @@ function DirC_Publications({ tweaks }) {
         </div>
       </section>
 
-      <section style={{ padding: "16px 40px 80px", maxWidth: 1200, margin: "0 auto" }}>
+      <section className="c-section" style={{ padding: "16px 40px 80px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "grid", gap: 8 }}>
           {pubs.map((p, i) =>
-          <a key={p.title} href={p.url} style={{
+          <a key={p.title} href={p.url} className="c-pub-row" style={{
             display: "grid", gridTemplateColumns: "80px 1fr 200px",
             gap: 24, padding: "20px 24px",
             background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
