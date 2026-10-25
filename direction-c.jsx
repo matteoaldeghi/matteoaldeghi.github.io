@@ -69,7 +69,7 @@ function DirC_Nav({ active }) {
 }
 
 function MLHighlight({ style = "serif" }) {
-  const text = "Machine Learning.";
+  const text = "Artificial Intelligence.";
 
   if (style === "serif") {
     // Editorial: italic serif, accent color, soft highlighter bar behind
@@ -217,8 +217,9 @@ function DirC_Home({ tweaks }) {
               <MLHighlight style={tweaks.mlStyle || "serif"} />
             </h1>
 
-            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: 0, maxWidth: 600 }}>I lead R&D Machine Learning Research at Bayer Pharmaceuticals, where I'm responsible for the development and application of AI solutions supporting our efforts across the R&D value chain.</p>
-            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: "16px 0 0", maxWidth: 600 }}>I'm interested in how technology, especially artificial intelligence, can accelerate the rate of scientific discovery and improve human health.</p>
+            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: 0, maxWidth: 600 }}>I'm a Member of Technical Staff at <a href="https://phylo.bio/" style={{ color: C_THEME.ink }}>Phylo</a>, working on AI agents for biomedical research.</p>
+            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: "16px 0 0", maxWidth: 600 }}>I previously led R&D ML Research at Bayer Pharma, where I was responsible for the development and application of AI solutions across R&D. Before that, I did research in ML, simulations, chemistry, and biology across the US, Canada, Germany and the UK.</p>
+            <p style={{ fontSize: 19, color: C_THEME.inkSoft, lineHeight: 1.5, margin: "16px 0 0", maxWidth: 600 }}>I'm broadly interested in technologies that can accelerate the rate of scientific discovery and improve human health.</p>
           </div>
 
           <div className="c-info-card" style={{
@@ -246,7 +247,7 @@ function DirC_Home({ tweaks }) {
       <section className="c-section c-section-affil" style={{ padding: "32px 40px", borderTop: `1px solid ${C_THEME.rule}`, borderBottom: `1px solid ${C_THEME.rule}`, background: C_THEME.surface }}>
         <div className="c-affil-row" style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 32 }}>
           <span style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted, letterSpacing: "0.1em" }}>PREVIOUSLY</span>
-          {["Google Research", "MIT", "Vector Institute", "Max Planck", "Oxford"].map((a) =>
+          {["Bayer", "Google", "MIT", "Vector Institute", "Max Planck", "Oxford"].map((a) =>
           <span key={a} style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 18, color: C_THEME.inkSoft, letterSpacing: "-0.015em" }}>{a}</span>
           )}
         </div>
@@ -355,7 +356,7 @@ function DirC_Footer() {
       <div className="c-footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40 }}>
         <div>
           <div style={{ fontFamily: cStyles.display, fontWeight: 600, fontSize: 20, letterSpacing: "-0.015em", marginBottom: 8 }}>Matteo Aldeghi</div>
-          <p style={{ fontSize: 14, color: C_THEME.inkSoft, maxWidth: 320, margin: 0 }}>Machine learning research, drug discovery and development.</p>
+          <p style={{ fontSize: 14, color: C_THEME.inkSoft, maxWidth: 320, margin: 0 }}>AI for science and agents for biomedical research.</p>
         </div>
         <div>
           <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkMuted, marginBottom: 12, letterSpacing: "0.1em" }}>PAGES</div>

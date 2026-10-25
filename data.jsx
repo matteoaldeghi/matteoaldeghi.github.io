@@ -18,11 +18,21 @@ const PROFILE = {
 
 const RESUME = [
   {
+    org: "Phylo",
+    role: "Member of Technical Staff",
+    period: "2026 — Present",
+    yearStart: 2026,
+    yearEnd: null,
+    location: "Cambridge, MA",
+    tags: ["AI Agents", "Biomedical Research"],
+    advisor: null,
+  },
+  {
     org: "Bayer Pharmaceuticals",
     role: "Director → Senior Director, Head of Machine Learning Research",
-    period: "2023 — Present",
+    period: "2023 — 2026",
     yearStart: 2023,
-    yearEnd: null,
+    yearEnd: 2026,
     location: "Cambridge, MA",
     tags: ["Machine Learning", "Drug Discovery & Development", "Leadership"],
     advisor: null,
@@ -103,15 +113,25 @@ const RESUME = [
 ];
 
 
-// All peer-reviewed and conference publications (48 entries).
+// All peer-reviewed and conference publications (49 entries).
 const PUBLICATIONS = [
+  {
+    year: 2026,
+    title: "Model validation protocols for machine learning in small molecule drug discovery",
+    authors: "S. Seal, A.S. Zalte, D.A. Araripe, R.A. Gomes, D. Korani, M. Shekhar, V.B. Siramshetty, A. Patra, Z. Mou, X. Yu, D. Kuhn, N. Weskamp, J.R. Ash, A.C. Cheng, C. Fang, D.J. Price, M. Aldeghi, R. Rodríguez-Pérez, D. Clevert, O. Engkvist, K. Deibler, D. Rouquie, M. Reutlinger, N.J. Richmond, J. Ainsley, M. Ledeboer, W.H. Green, A. Bender, C. Wognum",
+    venue: "bioRxiv",
+    cite: "2026",
+    url: "https://www.biorxiv.org/content/10.64898/2026.08.19.745868",
+    affiliation: "Bayer",
+    tags: ["benchmarking"],
+  },
   {
     year: 2026,
     title: "Protein language model-based fitness estimates facilitate resistance mutation identification",
     authors: "D. Schwarz, S. Giese, A. Gupta, P.J. Dziubańska-Kusibab, S. Villalba, A. Cherniack, X. Yang, D. Root, G. Karsli-Uzunbas, H. Greulich, F. Siegel, A. Kamburov, E. Nevedomskaya, C. Christ, M. Aldeghi, J. Mortier",
-    venue: "ChemRxiv",
+    venue: "Journal of Chemical Information and Modeling",
     cite: "2026",
-    url: "https://chemrxiv.org/doi/full/10.26434/chemrxiv.15000911/v1",
+    url: "https://pubs.acs.org/doi/abs/10.1021/acs.jcim.6c00768",
     affiliation: "Bayer",
     tags: ["protein-LM", "drug resistance"],
   },
