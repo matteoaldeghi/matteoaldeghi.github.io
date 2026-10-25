@@ -1,6 +1,7 @@
 // Main prototype app — hash router for the personal site.
 
-const ACCENT = "#2548f0";
+const ACCENT = "#0c0d10";       // ink
+const ACCENT_SOFT = "#e2d2ae";  // sand highlighter
 const ML_HIGHLIGHT_STYLE = "serif";
 
 function useHashRoute(defaultRoute = "home") {
@@ -22,11 +23,7 @@ function App() {
 
   React.useEffect(() => {
     document.documentElement.style.setProperty("--c-accent", ACCENT);
-    const hex = ACCENT.replace("#", "");
-    const r = parseInt(hex.slice(0, 2), 16);
-    const g = parseInt(hex.slice(2, 4), 16);
-    const b = parseInt(hex.slice(4, 6), 16);
-    document.documentElement.style.setProperty("--c-accent-soft", `rgba(${r},${g},${b},0.10)`);
+    document.documentElement.style.setProperty("--c-accent-soft", ACCENT_SOFT);
   }, []);
 
   const tweaks = { mlStyle: ML_HIGHLIGHT_STYLE };

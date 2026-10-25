@@ -2,15 +2,16 @@
 // Linear-meets-academic. Crisp sans, signal accent, product-page rhythm.
 
 const C_THEME = {
-  bg: "var(--c-bg, #fafaf9)",
-  surface: "var(--c-surface, #ffffff)",
-  surfaceAlt: "var(--c-surface-alt, #f1f0ee)",
+  bg: "var(--c-bg, #f7f5f0)",
+  surface: "var(--c-surface, #f0ede5)",
+  surfaceAlt: "var(--c-surface-alt, #e6e2d8)",
   ink: "var(--c-ink, #0c0d10)",
-  inkSoft: "var(--c-ink-soft, #4b4f57)",
-  inkMuted: "var(--c-ink-muted, #8c8f96)",
-  rule: "var(--c-rule, #e6e4df)",
-  accent: "var(--c-accent, #2548f0)",
-  accentSoft: "var(--c-accent-soft, rgba(37,72,240,0.08))"
+  inkSoft: "var(--c-ink-soft, #55524a)",
+  inkMuted: "var(--c-ink-muted, #9a968b)",
+  rule: "var(--c-rule, #e3dfd4)",
+  tileBorder: "var(--c-tile-border, transparent)",
+  accent: "var(--c-accent, #0c0d10)",
+  accentSoft: "var(--c-accent-soft, #e2d2ae)"
 };
 
 const cStyles = {
@@ -43,7 +44,7 @@ function DirC_Nav({ active }) {
       display: "flex", alignItems: "center", justifyContent: "space-between",
       padding: "20px 40px",
       position: "sticky", top: 0, zIndex: 10,
-      background: "rgba(250,250,249,0.85)",
+      background: "rgba(247,245,240,0.85)",
       backdropFilter: "blur(10px)",
       borderBottom: `1px solid ${C_THEME.rule}`
     }}>
@@ -75,17 +76,17 @@ function MLHighlight({ style = "serif" }) {
     return (
       <span style={{
         display: "inline-block", whiteSpace: "nowrap",
-        fontFamily: "'Instrument Serif', Georgia, serif",
+        fontFamily: "'Newsreader', Georgia, serif",
         fontStyle: "italic", fontWeight: 400,
         color: C_THEME.accent, letterSpacing: "-0.02em",
-        position: "relative"
+        position: "relative", isolation: "isolate"
       }}>
         {text}
         <span aria-hidden="true" style={{
           position: "absolute",
           left: 0, right: "0.15em",
-          bottom: "0.12em",
-          height: 6,
+          bottom: "0.06em",
+          height: "0.5em",
           background: C_THEME.accentSoft,
           zIndex: -1
         }} />
@@ -221,7 +222,7 @@ function DirC_Home({ tweaks }) {
           </div>
 
           <div className="c-info-card" style={{
-            background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
+            background: C_THEME.surface, border: `1px solid ${C_THEME.tileBorder}`,
             borderRadius: 14, padding: 24
           }}>
             <div className="c-info-card-head" style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
@@ -285,7 +286,7 @@ function FeaturedPublications() {
     <section className="c-section c-section-featured" style={{ padding: "80px 40px 32px", maxWidth: 1200, margin: "0 auto" }}>
       <div className="c-feat-head" style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32, gap: 24, flexWrap: "wrap" }}>
         <div>
-          <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.accent, letterSpacing: "0.1em", marginBottom: 12, fontWeight: 600 }}>
+          <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkSoft, letterSpacing: "0.1em", marginBottom: 12, fontWeight: 600 }}>
             FEATURED · 3 OF {window.PUBLICATIONS.length}
           </div>
           <h2 style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 36, letterSpacing: "-0.03em", margin: 0, lineHeight: 1.05 }}>
@@ -322,7 +323,7 @@ function FeaturedPublications() {
         {picks.map((p) =>
         <a key={p.title} href={p.url} target="_blank" rel="noreferrer" style={{
           display: "flex", flexDirection: "column",
-          background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
+          background: C_THEME.surface, border: `1px solid ${C_THEME.tileBorder}`,
           borderRadius: 14, padding: 24,
           textDecoration: "none", color: C_THEME.ink,
           transition: "border-color .15s, transform .15s"
@@ -386,7 +387,7 @@ function DirC_Resume({ tweaks }) {
       <DirC_Nav active="resume" />
 
       <section className="c-section" style={{ padding: "80px 40px 48px", maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.accent, letterSpacing: "0.1em", marginBottom: 16, fontWeight: 600 }}>
+        <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkSoft, letterSpacing: "0.1em", marginBottom: 16, fontWeight: 600 }}>
           RÉSUMÉ / 2007 — PRESENT
         </div>
         <h1 className="c-h1" style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 84, letterSpacing: "-0.04em", lineHeight: 0.98, margin: "0 0 24px" }}>
@@ -404,7 +405,7 @@ function DirC_Resume({ tweaks }) {
         <div style={{ display: "grid", gap: 12 }}>
           {window.RESUME.filter((r) => r.kind !== "education").map((r, i) =>
           <article key={r.org} className="c-resume-card" style={{
-            background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
+            background: C_THEME.surface, border: `1px solid ${C_THEME.tileBorder}`,
             borderRadius: 14, padding: 24,
             display: "grid", gridTemplateColumns: "120px 1fr 200px", gap: 24,
             alignItems: "center"
@@ -453,7 +454,7 @@ function DirC_Resume({ tweaks }) {
         <div className="c-edu-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
           {window.RESUME.filter((r) => r.kind === "education").map((r) =>
           <article key={r.org} style={{
-            background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
+            background: C_THEME.surface, border: `1px solid ${C_THEME.tileBorder}`,
             borderRadius: 14, padding: 20
           }}>
               <div style={{ fontFamily: cStyles.mono, fontSize: 12, color: C_THEME.inkSoft, marginBottom: 12 }}>
@@ -496,7 +497,7 @@ function DirC_Publications({ tweaks }) {
       <DirC_Nav active="publications" />
 
       <section className="c-section" style={{ padding: "64px 40px 32px", maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.accent, letterSpacing: "0.1em", marginBottom: 16, fontWeight: 600 }}>
+        <div style={{ fontFamily: cStyles.mono, fontSize: 11, color: C_THEME.inkSoft, letterSpacing: "0.1em", marginBottom: 16, fontWeight: 600 }}>
           PUBLICATIONS / {window.PUBLICATIONS.length} PAPERS
         </div>
         <h1 className="c-h1" style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 76, letterSpacing: "-0.04em", lineHeight: 1, margin: "0 0 24px" }}>
@@ -508,7 +509,7 @@ function DirC_Publications({ tweaks }) {
       </section>
 
       {/* Controls */}
-      <section className="c-section c-section-controls" style={{ padding: "16px 40px", maxWidth: 1200, margin: "0 auto", position: "sticky", top: 68, zIndex: 5, background: "rgba(250,250,249,0.9)", backdropFilter: "blur(10px)" }}>
+      <section className="c-section c-section-controls" style={{ padding: "16px 40px", maxWidth: 1200, margin: "0 auto", position: "sticky", top: 68, zIndex: 5, background: "rgba(247,245,240,0.9)", backdropFilter: "blur(10px)" }}>
         <div className="c-pub-controls" style={{ display: "flex", gap: 12, alignItems: "center", padding: "12px 0", borderBottom: `1px solid ${C_THEME.rule}` }}>
           <div className="c-pub-search" style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`, borderRadius: 10, padding: "8px 14px" }}>
             <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke={C_THEME.inkMuted} strokeWidth="2">
@@ -542,7 +543,7 @@ function DirC_Publications({ tweaks }) {
           <a key={p.title} href={p.url} className="c-pub-row" style={{
             display: "grid", gridTemplateColumns: "80px 1fr 200px",
             gap: 24, padding: "20px 24px",
-            background: C_THEME.surface, border: `1px solid ${C_THEME.rule}`,
+            background: C_THEME.surface, border: `1px solid ${C_THEME.tileBorder}`,
             borderRadius: 12,
             color: C_THEME.ink, textDecoration: "none",
             alignItems: "start"
