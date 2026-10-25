@@ -55,7 +55,7 @@ const RESUME = [
     yearEnd: 2022,
     location: "Cambridge, MA",
     tags: ["Active Learning", "Cheminformatics", "Graph Neural Networks"],
-    advisor: "Connor Coley",
+    advisor: null,
   },
   {
     org: "Vector Institute & University of Toronto",
@@ -65,7 +65,7 @@ const RESUME = [
     yearEnd: 2021,
     location: "Toronto",
     tags: ["Bayesian Optimization", "Materials Discovery", "Autonomous Experimentation"],
-    advisor: "Alán Aspuru-Guzik",
+    advisor: null,
   },
   {
     org: "Max Planck Institute for Biophysical Chemistry",
@@ -75,7 +75,7 @@ const RESUME = [
     yearEnd: 2019,
     location: "Göttingen",
     tags: ["Protein Design", "Molecular Dynamics", "Free Energy Calculations"],
-    advisor: "Bert L. de Groot",
+    advisor: null,
   },
   {
     org: "University of Oxford",
@@ -85,7 +85,7 @@ const RESUME = [
     yearEnd: 2016,
     location: "Oxford",
     tags: ["Drug Design", "Molecular Dynamics", "Free Energy Calculations", "Monte Carlo Simulations"],
-    advisor: "Philip C. Biggin",
+    advisor: null,
     kind: "education",
   },
   {
