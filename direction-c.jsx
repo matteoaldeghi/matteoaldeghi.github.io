@@ -229,8 +229,8 @@ function DirC_Home({ tweaks }) {
             <div className="c-info-card-head" style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
               <img src="images/about.png" alt="" style={{ width: 84, height: 84, borderRadius: 18, objectFit: "cover" }} />
               <div>
-                <div style={{ fontFamily: cStyles.display, fontWeight: 600, fontSize: 15 }}>Sr. Director, ML Research</div>
-                <div style={{ fontSize: 13, color: C_THEME.inkSoft }}>Bayer Pharmaceuticals · Cambridge, MA</div>
+                <div style={{ fontFamily: cStyles.display, fontWeight: 600, fontSize: 15 }}>Member of Technical Staff</div>
+                <div style={{ fontSize: 13, color: C_THEME.inkSoft }}>Phylo · Cambridge, MA</div>
               </div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, fontSize: 13 }}>
