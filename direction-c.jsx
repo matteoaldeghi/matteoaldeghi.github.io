@@ -230,7 +230,7 @@ function DirC_Home({ tweaks }) {
               <img src="images/about.png" alt="" style={{ width: 84, height: 84, borderRadius: 18, objectFit: "cover" }} />
               <div>
                 <div style={{ fontFamily: cStyles.display, fontWeight: 600, fontSize: 15 }}>Member of Technical Staff</div>
-                <div style={{ fontSize: 13, color: C_THEME.inkSoft }}>Phylo · Cambridge, MA</div>
+                <div style={{ fontSize: 15, color: C_THEME.inkSoft }}>Phylo · Cambridge, MA</div>
               </div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, fontSize: 13 }}>
@@ -394,9 +394,7 @@ function DirC_Resume({ tweaks }) {
         <h1 className="c-h1" style={{ fontFamily: cStyles.display, fontWeight: 500, fontSize: 84, letterSpacing: "-0.04em", lineHeight: 0.98, margin: "0 0 24px" }}>
           Career log.
         </h1>
-        <p style={{ fontSize: 19, color: C_THEME.inkSoft, maxWidth: 720, lineHeight: 1.5 }}>Trained as a chemist, sharpened as a computational biophysicist, now a machine learning researcher.
-
-        </p>
+        <p style={{ fontSize: 19, color: C_THEME.inkSoft, maxWidth: 720, lineHeight: 1.5 }}>From chemistry and computational biophysics to machine learning and AI.</p>
       </section>
 
       <section className="c-section" style={{ padding: "0 40px 48px", maxWidth: 1200, margin: "0 auto" }}>
